@@ -1,5 +1,6 @@
-package com.sims.daniel.baseapplication.features.home;
+package com.sims.daniel.baseapplication.features.home.home;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,9 +12,13 @@ import android.view.ViewGroup;
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.databinding.FragmentHomeBinding;
 import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
+import com.sims.daniel.baseapplication.features.home.HomeViewModel;
+import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
 public class HomeFragment extends BaseFragment<HomeViewModel> {
+
     private FragmentHomeBinding mFragmentHomeBinding;
+    private IHomeActivityCallback mHomeActivityCallback;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -29,5 +34,16 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         initViewModel(HomeViewModel.class);
 
         return mFragmentHomeBinding.getRoot();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if(context instanceof IHomeActivityCallback) {
+            mHomeActivityCallback = (IHomeActivityCallback) context;
+        } else {
+            throw new RuntimeException("Activity does not implement - IHomeActivityCallback");
+        }
     }
 }
