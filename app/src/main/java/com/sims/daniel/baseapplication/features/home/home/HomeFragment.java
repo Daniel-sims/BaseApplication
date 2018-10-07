@@ -15,10 +15,14 @@ import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
+import java.lang.ref.WeakReference;
+
+import timber.log.Timber;
+
 public class HomeFragment extends BaseFragment<HomeViewModel> {
 
     private FragmentHomeBinding mFragmentHomeBinding;
-    private IHomeActivityCallback mHomeActivityCallback;
+    private WeakReference<IHomeActivityCallback> mHomeActivityCallback;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -41,9 +45,19 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         super.onAttach(context);
 
         if(context instanceof IHomeActivityCallback) {
-            mHomeActivityCallback = (IHomeActivityCallback) context;
+            mHomeActivityCallback = new WeakReference<>((IHomeActivityCallback) context);
         } else {
             throw new RuntimeException("Activity does not implement - IHomeActivityCallback");
         }
+    }
+
+    private IHomeActivityCallback getActivityCallback() {
+        IHomeActivityCallback homeActivityCallback = mHomeActivityCallback.get();
+        if(homeActivityCallback != null) {
+            return homeActivityCallback;
+        }
+
+        Timber.d("HomeActivityCallback was null");
+        return null;
     }
 }
