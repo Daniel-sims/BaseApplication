@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/medium_blue" >
+
+    <item android:id="@android:id/mask" >
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/medium_blue" />
+            <corners android:radius="@dimen/corner_radius_outline_button" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/button_shape_blue_outline" />
+
+</ripple>
