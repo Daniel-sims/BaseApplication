@@ -23,13 +23,13 @@ public abstract class BaseFragment<T extends ViewModel> extends Fragment {
     protected void initViewModel(Class<T> cls) {
         FragmentActivity activity = getActivity();
         if (activity == null) {
-            throw new RuntimeException("Error: Cannot create view model with null Activity.");
+            throw new RuntimeException("Error: initViewModel() - Cannot create view model with null Activity.");
         }
 
         if (mViewModelFactory != null) {
             mViewModel = ViewModelProviders.of(activity, mViewModelFactory).get(cls);
         } else {
-            throw new RuntimeException("Error: Fragment not injected using dagger. Be sure to call "
+            throw new RuntimeException("Error: initViewModel() - Fragment not injected using dagger. Be sure to call "
                     + "getAppComponent().inject(Fragment.this) before initialising the view model.");
         }
     }
@@ -43,14 +43,14 @@ public abstract class BaseFragment<T extends ViewModel> extends Fragment {
             }
         }
 
-        throw new RuntimeException("Error: Could not locate AppComponent.");
+        throw new RuntimeException("Error: getAppComponent() - Could not locate AppComponent.");
     }
 
     protected T getViewModel() {
         if (mViewModel != null) {
             return mViewModel;
         } else {
-            throw new RuntimeException("Error: ViewModel not initialised please called initViewModel<T>.");
+            throw new RuntimeException("Error: getViewModel() - ViewModel not initialised please called initViewModel<T>.");
         }
     }
 

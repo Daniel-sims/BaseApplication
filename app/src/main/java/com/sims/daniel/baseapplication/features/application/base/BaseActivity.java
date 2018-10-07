@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sims.daniel.baseapplication.R;
 
-import java.util.Set;
+import java.util.Objects;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -24,7 +24,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     @AnimRes
     private static final int POP_ENTER_ANIMATION = R.anim.fade_in;
 
-    protected abstract int getContainerViewId();
+    @NonNull
+    protected int[] getAnimationIntArray() {
+        return new int[]{ENTER_ANIMATION, EXIT_ANIMATION, POP_ENTER_ANIMATION, POP_EXIT_ANIMATION};
+    }
 
     protected void swapFragment(@NonNull Fragment fragment, boolean addToBackStack, boolean animate) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -52,43 +55,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    private boolean areBundlesEqual(@Nullable Bundle args1, @Nullable Bundle args2) {
-        if (args1 == null && args2 == null) {
-            return true;
-        } else if (args1 == null) {
-            return false;
-        } else if (args2 == null) {
+    private boolean areBundlesEqual(@Nullable Bundle extras, @Nullable Bundle newExtras) {
+        if (extras == null || newExtras == null) {
+            return extras == newExtras;
+        }
+        if (extras.size() != newExtras.size()) {
             return false;
         }
-
-        if (args1.size() != args2.size()) {
-            return false;
-        }
-
-        Set<String> setOne = args1.keySet();
-        Object valueOne;
-        Object valueTwo;
-
-        for (String key : setOne) {
-            valueOne = args1.get(key);
-            valueTwo = args2.get(key);
-            if (valueOne instanceof Bundle && valueTwo instanceof Bundle &&
-                    !areBundlesEqual((Bundle) valueOne, (Bundle) valueTwo)) {
-                return false;
-            } else if (valueOne == null) {
-                if (valueTwo != null || !args2.containsKey(key)) {
+        for (String key : extras.keySet()) {
+            if (key != null) {
+                final Object value = extras.get(key);
+                final Object newValue = newExtras.get(key);
+                if (!Objects.equals(value, newValue)) {
                     return false;
                 }
-            } else if (!valueOne.equals(valueTwo)) {
-                return false;
             }
         }
-
         return true;
     }
 
-    @NonNull
-    protected int[] getAnimationIntArray() {
-        return new int[]{ENTER_ANIMATION, EXIT_ANIMATION, POP_ENTER_ANIMATION, POP_EXIT_ANIMATION};
-    }
+    protected abstract int getContainerViewId();
 }

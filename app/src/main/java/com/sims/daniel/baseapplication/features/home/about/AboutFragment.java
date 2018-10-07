@@ -1,6 +1,5 @@
 package com.sims.daniel.baseapplication.features.home.about;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,12 +14,9 @@ import com.sims.daniel.baseapplication.features.application.base.BaseCallbackFra
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
-import java.lang.ref.WeakReference;
-
 public class AboutFragment extends BaseCallbackFragment<HomeViewModel, IHomeActivityCallback> {
 
     private FragmentAboutBinding mFragmentAboutBinding;
-    private WeakReference<IHomeActivityCallback> mHomeActivityCallback;
 
     public static AboutFragment newInstance() {
         return new AboutFragment();
@@ -38,16 +34,5 @@ public class AboutFragment extends BaseCallbackFragment<HomeViewModel, IHomeActi
         initActivityCallback(IHomeActivityCallback.class);
         
         return mFragmentAboutBinding.getRoot();
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if(context instanceof IHomeActivityCallback) {
-            mHomeActivityCallback = new WeakReference<>((IHomeActivityCallback) context);
-        } else {
-            throw new RuntimeException("Error: Activity does not implement - IHomeActivityCallback.");
-        }
     }
 }
