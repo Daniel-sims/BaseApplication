@@ -29,6 +29,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         return new int[]{ENTER_ANIMATION, EXIT_ANIMATION, POP_ENTER_ANIMATION, POP_EXIT_ANIMATION};
     }
 
+    public interface OnBackPressedListener {
+        boolean onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        boolean handled = false;
+
+        Fragment fragment = getSupportFragmentManager().findFragmentById(getContainerViewId());
+        if (fragment != null && fragment instanceof OnBackPressedListener) {
+            handled = ((OnBackPressedListener) fragment).onBackPressed();
+        }
+
+        if (!handled) {
+            super.onBackPressed();
+        }
+    }
+
     protected void swapFragment(@NonNull Fragment fragment, boolean addToBackStack, boolean animate) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
