@@ -60,4 +60,11 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         Timber.d("HomeActivityCallback was null");
         return null;
     }
+
+    private void onButtonClicked() {
+        IHomeActivityCallback homeActivityCallback = getActivityCallback();
+        if(homeActivityCallback != null) {
+            homeActivityCallback.goToAboutFragment();
+        }
+    }
 }
