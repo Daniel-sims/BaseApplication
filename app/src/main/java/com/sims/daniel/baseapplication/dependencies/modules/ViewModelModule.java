@@ -2,7 +2,9 @@ package com.sims.daniel.baseapplication.dependencies.modules;
 
 import android.arch.lifecycle.ViewModel;
 
+import com.sims.daniel.baseapplication.features.calendar.CalendarViewModel;
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
+import com.sims.daniel.baseapplication.features.styles.StyleSheetViewModel;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -30,4 +32,14 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel.class)
     abstract ViewModel bindHomeViewModel(HomeViewModel homeViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CalendarViewModel.class)
+    abstract ViewModel bindCalendarViewModel(CalendarViewModel calendarViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(StyleSheetViewModel.class)
+    abstract ViewModel bindStyleSheetViewModel(StyleSheetViewModel styleSheetViewModel);
 }

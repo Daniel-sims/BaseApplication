@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Heading 1"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Heading2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Heading 2"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Title"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Title.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Title Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Subtitle"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Subtitle.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Subtitle Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 1"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body1.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 1 Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body1.Error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 1 Error"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 2"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body2.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 2 Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Body2.Error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Body 2 Error"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1 Small"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1 Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1.Secondary.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1 Secondary Small"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1.Error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1 Error"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption1.Error.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 1 Error Small"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2 Small"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2 Secondary"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2.Secondary.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2 Secondary Small"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2.Error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2 Error"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/Text.ProjectApplication.Caption2.Error.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal"
+                android:text="Caption 2 Error Small"/>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>
