@@ -10,9 +10,9 @@ import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.TypedValue;
 
 public class Utilities {
+
     public static Drawable getAttributeTintedDrawable(@NonNull Context context,
                                                       @AttrRes int drawableAttrId, @AttrRes int colorAttrId) {
-
         TypedValue drawableValue = new TypedValue();
         context.getTheme().resolveAttribute(drawableAttrId, drawableValue, true);
         Drawable drawable = ContextCompat.getDrawable(context, drawableValue.resourceId);
@@ -31,8 +31,7 @@ public class Utilities {
     public static @ColorInt int getAttributeColor(@NonNull Context context, @AttrRes int colorAttrId) {
         TypedValue colorValue = new TypedValue();
         context.getTheme().resolveAttribute(colorAttrId, colorValue, true);
+
         return colorValue.data;
     }
-
-
 }

@@ -1,6 +1,5 @@
 package com.sims.daniel.baseapplication.features.home.home;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,18 +10,13 @@ import android.view.ViewGroup;
 
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.databinding.FragmentHomeBinding;
-import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
+import com.sims.daniel.baseapplication.features.application.base.BaseCallbackFragment;
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
-import java.lang.ref.WeakReference;
-
-import timber.log.Timber;
-
-public class HomeFragment extends BaseFragment<HomeViewModel> {
+public class HomeFragment extends BaseCallbackFragment<HomeViewModel, IHomeActivityCallback> {
 
     private FragmentHomeBinding mFragmentHomeBinding;
-    private WeakReference<IHomeActivityCallback> mHomeActivityCallback;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -35,25 +29,16 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
                 inflater, R.layout.fragment_home, container, false);
 
         getAppComponent().inject(this);
+
         initViewModel(HomeViewModel.class);
+        initCallback(IHomeActivityCallback.class);
 
         initOnClick();
 
         return mFragmentHomeBinding.getRoot();
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if(context instanceof IHomeActivityCallback) {
-            mHomeActivityCallback = new WeakReference<>((IHomeActivityCallback) context);
-        } else {
-            throw new RuntimeException("Error: Activity does not implement - IHomeActivityCallback.");
-        }
-    }
-
-    public void initOnClick() {
+    private void initOnClick() {
         mFragmentHomeBinding.fragmentHomeGoToAboutUsButton.setOnClickListener(view -> {
             IHomeActivityCallback homeActivityCallback = getActivityCallback();
             if (homeActivityCallback != null) {
@@ -67,15 +52,5 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
                 homeActivityCallback.goToStyleSheetActivity();
             }
         });
-    }
-
-    private IHomeActivityCallback getActivityCallback() {
-        IHomeActivityCallback homeActivityCallback = mHomeActivityCallback.get();
-        if(homeActivityCallback != null) {
-            return homeActivityCallback;
-        } else {
-            Timber.d("HomeActivityCallback was null.");
-            return null;
-        }
     }
 }
