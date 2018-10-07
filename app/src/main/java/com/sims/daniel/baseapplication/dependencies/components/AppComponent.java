@@ -7,6 +7,7 @@ import com.sims.daniel.baseapplication.dependencies.modules.ViewModelModule;
 import com.sims.daniel.baseapplication.features.calendar.CalendarFragment;
 import com.sims.daniel.baseapplication.features.home.aboutus.AboutUsFragment;
 import com.sims.daniel.baseapplication.features.home.home.HomeFragment;
+import com.sims.daniel.baseapplication.features.styles.StyleSheetFragment;
 
 import javax.inject.Singleton;
 
@@ -32,5 +33,8 @@ public interface AppComponent {
      */
     void inject(CalendarFragment calendarFragment);
 
-
+    /*
+        Style Sheet feature
+     */
+    void inject(StyleSheetFragment styleSheetFragment);
 }

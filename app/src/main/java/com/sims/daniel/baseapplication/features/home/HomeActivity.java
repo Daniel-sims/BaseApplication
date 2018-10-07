@@ -10,6 +10,7 @@ import com.sims.daniel.baseapplication.features.calendar.CalendarActivity;
 import com.sims.daniel.baseapplication.features.home.aboutus.AboutUsFragment;
 import com.sims.daniel.baseapplication.features.home.home.HomeFragment;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
+import com.sims.daniel.baseapplication.features.styles.StyleSheetActivity;
 
 public class HomeActivity extends BaseActivity implements IHomeActivityCallback {
 
@@ -31,6 +32,12 @@ public class HomeActivity extends BaseActivity implements IHomeActivityCallback 
     @Override
     public void goToCalendarActivity() {
         Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void goToStyleSheetActivity() {
+        Intent intent = new Intent(this, StyleSheetActivity.class);
         startActivity(intent);
     }
 

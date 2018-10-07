@@ -37,6 +37,8 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         getAppComponent().inject(this);
         initViewModel(HomeViewModel.class);
 
+        initOnClick();
+
         return mFragmentHomeBinding.getRoot();
     }
 
@@ -51,20 +53,29 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         }
     }
 
+    public void initOnClick() {
+        mFragmentHomeBinding.fragmentHomeGoToAboutUsButton.setOnClickListener(view -> {
+            IHomeActivityCallback homeActivityCallback = getActivityCallback();
+            if (homeActivityCallback != null) {
+                homeActivityCallback.goToAboutFragment();
+            }
+        });
+
+        mFragmentHomeBinding.fragmentHomeGoToStyleSheetButton.setOnClickListener(view -> {
+            IHomeActivityCallback homeActivityCallback = getActivityCallback();
+            if (homeActivityCallback != null) {
+                homeActivityCallback.goToStyleSheetActivity();
+            }
+        });
+    }
+
     private IHomeActivityCallback getActivityCallback() {
         IHomeActivityCallback homeActivityCallback = mHomeActivityCallback.get();
         if(homeActivityCallback != null) {
             return homeActivityCallback;
-        }
-
-        Timber.d("HomeActivityCallback was null");
-        return null;
-    }
-
-    private void onButtonClicked() {
-        IHomeActivityCallback homeActivityCallback = getActivityCallback();
-        if(homeActivityCallback != null) {
-            homeActivityCallback.goToAboutFragment();
+        } else {
+            Timber.d("HomeActivityCallback was null.");
+            return null;
         }
     }
 }

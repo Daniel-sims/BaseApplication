@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="PrimaryTextColor" format="color"/>
+    <attr name="SecondaryTextColor" format="color"/>
+    <attr name="LightTextColor" format="color"/>
+    <attr name="ErrorTextColor" format="color"/>
+
+    <attr name="PrimarySelector" format="reference" />
+
+    <!-- Button attributes -->
+    <attr name="DefaultButtonTextColor" format="color"/>
+
+    <attr name="FilledButtonBackground" format="reference"/>
+    <attr name="FilledThemeButtonBackground" format="reference"/>
+    <attr name="OutlineButtonBackground" format="reference"/>
+    <attr name="BorderlessButtonBackground" format="reference"/>
+
+</resources>
