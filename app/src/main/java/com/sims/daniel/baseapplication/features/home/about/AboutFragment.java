@@ -11,15 +11,13 @@ import android.view.ViewGroup;
 
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.databinding.FragmentAboutBinding;
-import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
+import com.sims.daniel.baseapplication.features.application.base.BaseCallbackFragment;
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
 import java.lang.ref.WeakReference;
 
-import timber.log.Timber;
-
-public class AboutFragment extends BaseFragment<HomeViewModel> {
+public class AboutFragment extends BaseCallbackFragment<HomeViewModel, IHomeActivityCallback> {
 
     private FragmentAboutBinding mFragmentAboutBinding;
     private WeakReference<IHomeActivityCallback> mHomeActivityCallback;
@@ -35,8 +33,10 @@ public class AboutFragment extends BaseFragment<HomeViewModel> {
                 inflater, R.layout.fragment_about, container, false);
 
         getAppComponent().inject(this);
-        initViewModel(HomeViewModel.class);
 
+        initViewModel(HomeViewModel.class);
+        initActivityCallback(IHomeActivityCallback.class);
+        
         return mFragmentAboutBinding.getRoot();
     }
 
@@ -48,16 +48,6 @@ public class AboutFragment extends BaseFragment<HomeViewModel> {
             mHomeActivityCallback = new WeakReference<>((IHomeActivityCallback) context);
         } else {
             throw new RuntimeException("Error: Activity does not implement - IHomeActivityCallback.");
-        }
-    }
-
-    private IHomeActivityCallback getActivityCallback() {
-        IHomeActivityCallback homeActivityCallback = mHomeActivityCallback.get();
-        if(homeActivityCallback != null) {
-            return homeActivityCallback;
-        } else {
-            Timber.d("HomeActivityCallback was null.");
-            return null;
         }
     }
 }
