@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.features.application.base.BaseActivity;
-import com.sims.daniel.baseapplication.features.calendar.CalendarActivity;
 import com.sims.daniel.baseapplication.features.home.about.AboutFragment;
 import com.sims.daniel.baseapplication.features.home.home.HomeFragment;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
@@ -27,12 +26,6 @@ public class HomeActivity extends BaseActivity implements IHomeActivityCallback 
     @Override
     protected int getContainerViewId() {
         return R.id.activity_home_fragment_container;
-    }
-
-    @Override
-    public void goToCalendarActivity() {
-        Intent intent = new Intent(this, CalendarActivity.class);
-        startActivity(intent);
     }
 
     @Override

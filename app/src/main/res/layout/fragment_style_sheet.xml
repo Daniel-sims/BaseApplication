@@ -40,6 +40,30 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <android.support.v7.widget.AppCompatButton
+                    style="@style/Button.ProjectApplication.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button Filled"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    style="@style/Button.ProjectApplication.Filled.Theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button Filled Theme"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    style="@style/Button.ProjectApplication.Outline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button Outline"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    style="@style/Button.ProjectApplication.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button Borderless"/>
+
                 <android.support.v7.widget.AppCompatTextView
                     style="@style/Text.ProjectApplication.Heading1"
                     android:layout_width="wrap_content"
@@ -207,6 +231,71 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/spacing_normal"
                     android:text="Caption 2 Error Small"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medium_blue"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Heading1.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Heading 1 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Heading2.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Heading 2 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Body1.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Body 1 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Body2.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Body 2 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Caption1.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Caption 1 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Caption1.Light.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Caption 1 Light Small"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Caption2.Light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Caption 2 Light"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Text.ProjectApplication.Caption2.Light.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_normal"
+                        android:text="Caption 2 Light small"/>
+
+                </LinearLayout>
 
 
             </LinearLayout>
