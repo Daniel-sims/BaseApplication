@@ -16,7 +16,7 @@ public class BaseCallbackFragment<T extends ViewModel, U> extends BaseFragment<T
 
     private WeakReference<U> mActivityCallback;
 
-    public void initCallback(Class<U> cls) {
+    public void initActivityCallback(Class<U> cls) {
         Context context = getContext();
 
         if(cls.isInstance(context)) {

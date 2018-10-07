@@ -31,7 +31,7 @@ public class HomeFragment extends BaseCallbackFragment<HomeViewModel, IHomeActiv
         getAppComponent().inject(this);
 
         initViewModel(HomeViewModel.class);
-        initCallback(IHomeActivityCallback.class);
+        initActivityCallback(IHomeActivityCallback.class);
 
         initOnClick();
 
