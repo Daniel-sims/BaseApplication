@@ -30,6 +30,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="error_color">#F5463A</color>
 
     <color name="material_white_primary">#FFFFFF</color>
@@ -48,6 +49,5 @@
 
     <color name="rubine">#D4095F</color>
     <color name="rubine_dark">#6E0431</color>
-
 
 </resources>

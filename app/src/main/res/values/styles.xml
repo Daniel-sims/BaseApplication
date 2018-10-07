@@ -2,17 +2,18 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        
-        <!-- Common attributes -->
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <!-- Common attributes -->
         <item name="PrimaryTextColor">@color/medium_blue</item>
         <item name="SecondaryTextColor">@color/medium_blue_40pc</item>
         <item name="LightTextColor">@color/material_white_primary</item>
         <item name="ErrorTextColor">@color/error_color</item>
 
+        <!-- Selectors -->
         <item name="PrimarySelector">@drawable/default_selector_blue</item>
 
         <!-- Button styles -->
@@ -22,6 +23,13 @@
         <item name="FilledThemeButtonBackground">@drawable/button_blue</item>
         <item name="OutlineButtonBackground">@drawable/button_blue_outline</item>
         <item name="BorderlessButtonBackground">@drawable/default_selector_blue</item>
+
+        <!-- Navigation Icons -->
+        <item name="NavigationUpArrow">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="NavigationCloseIcon">@drawable/ic_close_white_24dp</item>
+
+        <!-- Style Sheet -->
+        <item name="StyleSheetNavigationIconColor">@color/material_white_primary</item>
 
     </style>
 

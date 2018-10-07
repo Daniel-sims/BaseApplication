@@ -13,6 +13,7 @@ import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.databinding.FragmentStyleSheetBinding;
 import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
 import com.sims.daniel.baseapplication.features.styles.interfaces.IStyleSheetActivityCallback;
+import com.sims.daniel.baseapplication.utils.Utilities;
 
 import java.lang.ref.WeakReference;
 
@@ -36,6 +37,8 @@ public class StyleSheetFragment extends BaseFragment<StyleSheetViewModel> {
         getAppComponent().inject(this);
         initViewModel(StyleSheetViewModel.class);
 
+        initToolbar();
+
         return mFragmentStyleSheetBinding.getRoot();
     }
 
@@ -43,20 +46,33 @@ public class StyleSheetFragment extends BaseFragment<StyleSheetViewModel> {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        if(context instanceof IStyleSheetActivityCallback) {
+        if (context instanceof IStyleSheetActivityCallback) {
             mStyleSheetActivityCallback = new WeakReference<>((IStyleSheetActivityCallback) context);
         } else {
-            throw new RuntimeException("Activity does not implement - IStyleSheetActivityCallback");
+            throw new RuntimeException("Error: Activity does not implement - IStyleSheetActivityCallback.");
         }
+    }
+
+    private void initToolbar() {
+        Context context = getContext();
+        if (context != null) {
+            mFragmentStyleSheetBinding.fragmentStyleSheetToolbar.setNavigationIcon(Utilities.getAttributeTintedDrawable(
+                    getContext(),
+                    R.attr.NavigationUpArrow,
+                    R.attr.StyleSheetNavigationIconColor));
+
+            mFragmentStyleSheetBinding.fragmentStyleSheetToolbar.setNavigationOnClickListener(view -> onBackPressed());
+        }
+
     }
 
     private IStyleSheetActivityCallback getActivityCallback() {
         IStyleSheetActivityCallback styleSheetActivityCallback = mStyleSheetActivityCallback.get();
-        if(styleSheetActivityCallback != null) {
+        if (styleSheetActivityCallback != null) {
             return styleSheetActivityCallback;
+        } else {
+            Timber.d("StyleSheetActivityCallback was null.");
+            return null;
         }
-
-        Timber.d("StyleSheetActivityCallback was null.");
-        return null;
     }
 }

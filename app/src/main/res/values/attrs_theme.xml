@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Common attributes -->
     <attr name="PrimaryTextColor" format="color"/>
     <attr name="SecondaryTextColor" format="color"/>
     <attr name="LightTextColor" format="color"/>
     <attr name="ErrorTextColor" format="color"/>
 
-    <attr name="PrimarySelector" format="reference" />
+    <!-- Selectors -->
+    <attr name="PrimarySelector" format="reference"/>
 
-    <!-- Button attributes -->
+    <!-- Button styles -->
     <attr name="DefaultButtonTextColor" format="color"/>
 
     <attr name="FilledButtonBackground" format="reference"/>
     <attr name="FilledThemeButtonBackground" format="reference"/>
     <attr name="OutlineButtonBackground" format="reference"/>
     <attr name="BorderlessButtonBackground" format="reference"/>
+
+    <!-- Navigation Icons -->
+    <attr name="NavigationUpArrow" format="reference"/>
+    <attr name="NavigationCloseIcon" format="reference"/>
+
+    <!-- Style Sheet -->
+    <attr name="StyleSheetNavigationIconColor" format="color"/>
 
 </resources>

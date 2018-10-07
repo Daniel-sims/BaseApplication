@@ -47,7 +47,7 @@ public class AboutFragment extends BaseFragment<HomeViewModel> {
         if(context instanceof IHomeActivityCallback) {
             mHomeActivityCallback = new WeakReference<>((IHomeActivityCallback) context);
         } else {
-            throw new RuntimeException("Activity does not implement - IHomeActivityCallback");
+            throw new RuntimeException("Error: Activity does not implement - IHomeActivityCallback.");
         }
     }
 

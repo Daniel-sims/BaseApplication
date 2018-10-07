@@ -3,4 +3,5 @@
     <string name="home">Home</string>
     <string name="go_to_about">Go to About</string>
     <string name="go_to_style_sheet">Go to Style Sheet</string>
+    <string name="style_sheet">Style Sheet</string>
 </resources>
