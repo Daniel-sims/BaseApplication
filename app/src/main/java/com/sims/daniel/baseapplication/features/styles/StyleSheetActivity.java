@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.features.application.base.BaseActivity;
-import com.sims.daniel.baseapplication.features.calendar.CalendarFragment;
 import com.sims.daniel.baseapplication.features.styles.interfaces.IStyleSheetActivityCallback;
 
 public class StyleSheetActivity extends BaseActivity implements IStyleSheetActivityCallback {

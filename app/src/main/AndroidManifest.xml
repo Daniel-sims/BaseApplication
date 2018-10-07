@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".features.styles.StyleSheetActivity"/>
-        <activity android:name=".features.calendar.CalendarActivity"/>
     </application>
 
 </manifest>
