@@ -14,10 +14,14 @@ import com.sims.daniel.baseapplication.databinding.FragmentCalendarBinding;
 import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
 import com.sims.daniel.baseapplication.features.calendar.interfaces.ICalendarActivityCallback;
 
+import java.lang.ref.WeakReference;
+
+import timber.log.Timber;
+
 public class CalendarFragment extends BaseFragment<CalendarViewModel> {
 
     private FragmentCalendarBinding mFragmentCalendarBinding;
-    private ICalendarActivityCallback mCalendarActivityCallback;
+    private WeakReference<ICalendarActivityCallback> mCalendarActivityCallback;
 
     public static CalendarFragment newInstance() {
         return new CalendarFragment();
@@ -40,9 +44,19 @@ public class CalendarFragment extends BaseFragment<CalendarViewModel> {
         super.onAttach(context);
 
         if(context instanceof ICalendarActivityCallback) {
-            mCalendarActivityCallback = (ICalendarActivityCallback) context;
+            mCalendarActivityCallback = new WeakReference<>((ICalendarActivityCallback) context);
         } else {
             throw new RuntimeException("Activity does not implement - ICalendarActivityCallback");
+        }
+    }
+
+    private ICalendarActivityCallback getActivityCallback() {
+        ICalendarActivityCallback calendarActivityCallback = mCalendarActivityCallback.get();
+        if(calendarActivityCallback != null) {
+            return calendarActivityCallback;
+        } else {
+            Timber.d("CalendarActivityCallback was null.");
+            return null;
         }
     }
 }

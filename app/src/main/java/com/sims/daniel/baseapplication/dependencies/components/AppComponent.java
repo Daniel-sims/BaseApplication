@@ -5,7 +5,7 @@ import com.sims.daniel.baseapplication.dependencies.modules.DataProviderModule;
 import com.sims.daniel.baseapplication.dependencies.modules.NetworkModule;
 import com.sims.daniel.baseapplication.dependencies.modules.ViewModelModule;
 import com.sims.daniel.baseapplication.features.calendar.CalendarFragment;
-import com.sims.daniel.baseapplication.features.home.aboutus.AboutUsFragment;
+import com.sims.daniel.baseapplication.features.home.about.AboutFragment;
 import com.sims.daniel.baseapplication.features.home.home.HomeFragment;
 import com.sims.daniel.baseapplication.features.styles.StyleSheetFragment;
 
@@ -26,7 +26,7 @@ public interface AppComponent {
      */
     void inject(HomeFragment homeFragment);
 
-    void inject(AboutUsFragment aboutUsFragment);
+    void inject(AboutFragment aboutFragment);
 
     /*
         Calendar feature

@@ -1,4 +1,4 @@
-package com.sims.daniel.baseapplication.features.home.aboutus;
+package com.sims.daniel.baseapplication.features.home.about;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sims.daniel.baseapplication.R;
-import com.sims.daniel.baseapplication.databinding.FragmentAboutUsBinding;
+import com.sims.daniel.baseapplication.databinding.FragmentAboutBinding;
 import com.sims.daniel.baseapplication.features.application.base.BaseFragment;
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
@@ -19,25 +19,25 @@ import java.lang.ref.WeakReference;
 
 import timber.log.Timber;
 
-public class AboutUsFragment extends BaseFragment<HomeViewModel> {
+public class AboutFragment extends BaseFragment<HomeViewModel> {
 
-    private FragmentAboutUsBinding mFragmentAboutUsBinding;
+    private FragmentAboutBinding mFragmentAboutBinding;
     private WeakReference<IHomeActivityCallback> mHomeActivityCallback;
 
-    public static AboutUsFragment newInstance() {
-        return new AboutUsFragment();
+    public static AboutFragment newInstance() {
+        return new AboutFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mFragmentAboutUsBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_about_us, container, false);
+        mFragmentAboutBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_about, container, false);
 
         getAppComponent().inject(this);
         initViewModel(HomeViewModel.class);
 
-        return mFragmentAboutUsBinding.getRoot();
+        return mFragmentAboutBinding.getRoot();
     }
 
     @Override
@@ -55,9 +55,9 @@ public class AboutUsFragment extends BaseFragment<HomeViewModel> {
         IHomeActivityCallback homeActivityCallback = mHomeActivityCallback.get();
         if(homeActivityCallback != null) {
             return homeActivityCallback;
+        } else {
+            Timber.d("HomeActivityCallback was null.");
+            return null;
         }
-
-        Timber.d("HomeActivityCallback was null.");
-        return null;
     }
 }
