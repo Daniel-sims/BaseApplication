@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.TypedValue;
 
+import java.util.List;
+
 public class Utilities {
 
     public static Drawable getAttributeTintedDrawable(@NonNull Context context,
@@ -33,5 +35,9 @@ public class Utilities {
         context.getTheme().resolveAttribute(colorAttrId, colorValue, true);
 
         return colorValue.data;
+    }
+
+    public static <T> boolean isNullOrEmpty(List<T> list) {
+        return list == null || list.size() == 0;
     }
 }
