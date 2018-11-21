@@ -4,14 +4,13 @@ import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
 
-import com.sims.daniel.baseapplication.data.models.TestModel;
+import com.sims.daniel.baseapplication.data.models.Message;
 
 import java.util.List;
 
 @Dao
-public interface TestModelDao extends BaseDao<TestModel>{
+public interface MessageDao extends BaseDao<Message> {
 
-    @Query("SELECT * FROM TestModel")
-    LiveData<List<TestModel>> getAll();
-
+    @Query("SELECT * FROM Message")
+    LiveData<List<Message>> getAll();
 }

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "64392e2fa2fa4d17c1b8eb4b411ca9fb",
+    "identityHash": "5b5b616d211ba701dfc74f045f4d1901",
     "entities": [
       {
         "tableName": "TestModel",
@@ -35,11 +35,37 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "Message",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `message` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "mId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mMessage",
+            "columnName": "message",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"64392e2fa2fa4d17c1b8eb4b411ca9fb\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"5b5b616d211ba701dfc74f045f4d1901\")"
     ]
   }
 }

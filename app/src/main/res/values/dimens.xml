@@ -19,4 +19,8 @@
     <dimen name="corner_radius_outline_button">2dp</dimen>
     <dimen name="stroke_width_outline_button">1dp</dimen>
     <dimen name="button_min_width">48dp</dimen>
+
+    <!-- Edit Text -->
+    <dimen name="edit_text_min_height">56dp</dimen>
+
 </resources>

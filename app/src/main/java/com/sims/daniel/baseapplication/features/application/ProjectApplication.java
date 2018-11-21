@@ -21,10 +21,6 @@ public class ProjectApplication extends Application {
         initDagger();
     }
 
-    private void initDatabase() {
-
-    }
-
     private void initDagger() {
         mAppComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))

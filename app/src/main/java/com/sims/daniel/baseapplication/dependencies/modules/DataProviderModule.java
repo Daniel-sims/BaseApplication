@@ -3,8 +3,10 @@ package com.sims.daniel.baseapplication.dependencies.modules;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
+import com.sims.daniel.baseapplication.data.daos.MessageDao;
 import com.sims.daniel.baseapplication.data.daos.TestModelDao;
 import com.sims.daniel.baseapplication.data.database.ProjectApplicationDatabase;
+import com.sims.daniel.baseapplication.data.repositories.MessageRepository;
 import com.sims.daniel.baseapplication.data.repositories.TestModelRepository;
 
 import javax.inject.Singleton;
@@ -36,5 +38,17 @@ public class DataProviderModule {
     @Provides
     TestModelRepository provideTestModelRepository(TestModelDao testModelDao) {
         return new TestModelRepository(testModelDao);
+    }
+
+    @Singleton
+    @Provides
+    MessageDao provideMessageDao(ProjectApplicationDatabase projectApplicationDatabase) {
+        return projectApplicationDatabase.messageDao();
+    }
+
+    @Singleton
+    @Provides
+    MessageRepository provideMessageRepository(MessageDao messageDao) {
+        return new MessageRepository(messageDao);
     }
 }

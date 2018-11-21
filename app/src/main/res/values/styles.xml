@@ -222,4 +222,9 @@
     </style>
     <!-- End of default button styles -->
 
+    <!-- Edit Text Styles -->
+    <style name="EditText.ProjectApplication" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:minHeight">@dimen/edit_text_min_height</item>
+    </style>
+
 </resources>

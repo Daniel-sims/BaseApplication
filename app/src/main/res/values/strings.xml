@@ -13,5 +13,7 @@
 
     <!-- List Fragment -->
     <string name="list_fragment_title">List</string>
+    <string name="list_fragment_add_message_button_text">Add Message</string>
+    <string name="fragment_list_add_message_hint">Message</string>
 
 </resources>
