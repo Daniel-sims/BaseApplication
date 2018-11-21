@@ -28,8 +28,11 @@
         <item name="NavigationUpArrow">@drawable/ic_arrow_back_white_24dp</item>
         <item name="NavigationCloseIcon">@drawable/ic_close_white_24dp</item>
 
-        <!-- Style Sheet -->
-        <item name="StyleSheetNavigationIconColor">@color/material_white_primary</item>
+        <!-- Style Sheet Fragment -->
+        <item name="StyleSheetFragmentNavigationIconColor">@color/material_white_primary</item>
+
+        <!-- List Fragment -->
+        <item name="ListFragmentNavigationIconColor">@color/material_white_primary</item>
 
     </style>
 

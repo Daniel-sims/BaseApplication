@@ -3,6 +3,7 @@ package com.sims.daniel.baseapplication.dependencies.modules;
 import android.arch.lifecycle.ViewModel;
 
 import com.sims.daniel.baseapplication.features.home.HomeViewModel;
+import com.sims.daniel.baseapplication.features.list.ListViewModel;
 import com.sims.daniel.baseapplication.features.styles.StyleSheetViewModel;
 
 import java.lang.annotation.Documented;
@@ -36,4 +37,9 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(StyleSheetViewModel.class)
     abstract ViewModel bindStyleSheetViewModel(StyleSheetViewModel styleSheetViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ListViewModel.class)
+    abstract ViewModel bindListViewModel(ListViewModel listViewModel);
 }

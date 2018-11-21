@@ -1,4 +1,4 @@
-package com.sims.daniel.baseapplication.features.home.home;
+package com.sims.daniel.baseapplication.features.home;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.databinding.FragmentHomeBinding;
 import com.sims.daniel.baseapplication.features.application.base.BaseCallbackFragment;
-import com.sims.daniel.baseapplication.features.home.HomeViewModel;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
 
 public class HomeFragment extends BaseCallbackFragment<HomeViewModel, IHomeActivityCallback> {
@@ -39,17 +38,17 @@ public class HomeFragment extends BaseCallbackFragment<HomeViewModel, IHomeActiv
     }
 
     private void initOnClick() {
-        mFragmentHomeBinding.fragmentHomeGoToAboutUsButton.setOnClickListener(view -> {
-            IHomeActivityCallback homeActivityCallback = getActivityCallback();
-            if (homeActivityCallback != null) {
-                homeActivityCallback.goToAboutFragment();
-            }
-        });
-
-        mFragmentHomeBinding.fragmentHomeGoToStyleSheetButton.setOnClickListener(view -> {
+        mFragmentHomeBinding.fragmentHomeGoToStyleSheetFragmentButton.setOnClickListener(view -> {
             IHomeActivityCallback homeActivityCallback = getActivityCallback();
             if (homeActivityCallback != null) {
                 homeActivityCallback.goToStyleSheetActivity();
+            }
+        });
+
+        mFragmentHomeBinding.fragmentHomeGoToListActivityButton.setOnClickListener(view -> {
+            IHomeActivityCallback homeActivityCallback = getActivityCallback();
+            if (homeActivityCallback != null) {
+                homeActivityCallback.goToListActivity();
             }
         });
     }

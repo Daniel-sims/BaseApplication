@@ -5,8 +5,6 @@ import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
-import timber.log.Timber;
-
 /***
  *
  * @param <T> A ViewModel which inherits from ViewModel with an injected constructor.
@@ -16,11 +14,12 @@ public class BaseCallbackFragment<T extends ViewModel, U> extends BaseFragment<T
 
     private WeakReference<U> mActivityCallback;
 
+    @SuppressWarnings("unchecked")
     public void initActivityCallback(Class<U> cls) {
         Context context = getContext();
 
         if(cls.isInstance(context)) {
-            mActivityCallback = new WeakReference<>((U) context);
+                mActivityCallback = new WeakReference<>((U) context);
         } else {
             throw new RuntimeException("Error: initCallback() - Could not initialise callback.");
         }
@@ -31,8 +30,8 @@ public class BaseCallbackFragment<T extends ViewModel, U> extends BaseFragment<T
         if(activityCallback != null) {
             return activityCallback;
         } else {
-            Timber.d("Error: getActivityCallback() - ActivityCallback was null.");
-            return null;
+            throw new RuntimeException("Error: getActivityCallback() - Attempted to " +
+                    "access Activity Callback but member is null.");
         }
     }
 }

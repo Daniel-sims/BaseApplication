@@ -4,5 +4,5 @@ public interface IHomeActivityCallback {
     
     void goToStyleSheetActivity();
 
-    void goToAboutFragment();
+    void goToListActivity();
 }

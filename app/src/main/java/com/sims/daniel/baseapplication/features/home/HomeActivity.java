@@ -6,9 +6,8 @@ import android.support.annotation.Nullable;
 
 import com.sims.daniel.baseapplication.R;
 import com.sims.daniel.baseapplication.features.application.base.BaseActivity;
-import com.sims.daniel.baseapplication.features.home.about.AboutFragment;
-import com.sims.daniel.baseapplication.features.home.home.HomeFragment;
 import com.sims.daniel.baseapplication.features.home.interfaces.IHomeActivityCallback;
+import com.sims.daniel.baseapplication.features.list.ListActivity;
 import com.sims.daniel.baseapplication.features.styles.StyleSheetActivity;
 
 public class HomeActivity extends BaseActivity implements IHomeActivityCallback {
@@ -35,7 +34,8 @@ public class HomeActivity extends BaseActivity implements IHomeActivityCallback 
     }
 
     @Override
-    public void goToAboutFragment() {
-        swapFragment(AboutFragment.newInstance(), true, true);
+    public void goToListActivity() {
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
     }
 }

@@ -21,7 +21,10 @@
     <attr name="NavigationUpArrow" format="reference"/>
     <attr name="NavigationCloseIcon" format="reference"/>
 
-    <!-- Style Sheet -->
-    <attr name="StyleSheetNavigationIconColor" format="color"/>
+    <!-- Style Sheet Fragment -->
+    <attr name="StyleSheetFragmentNavigationIconColor" format="color"/>
+
+    <!-- List Fragment -->
+    <attr name="ListFragmentNavigationIconColor" format="color"/>
 
 </resources>

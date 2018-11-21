@@ -45,7 +45,7 @@ public class StyleSheetFragment extends BaseCallbackFragment<StyleSheetViewModel
             mFragmentStyleSheetBinding.fragmentStyleSheetToolbar.setNavigationIcon(Utilities.getAttributeTintedDrawable(
                     getContext(),
                     R.attr.NavigationUpArrow,
-                    R.attr.StyleSheetNavigationIconColor));
+                    R.attr.StyleSheetFragmentNavigationIconColor));
 
             mFragmentStyleSheetBinding.fragmentStyleSheetToolbar.setNavigationOnClickListener(view -> onBackPressed());
         }

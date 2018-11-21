@@ -1,7 +1,17 @@
 <resources>
+    <!-- Common -->
     <string name="app_name">BaseApplication</string>
-    <string name="home">Home</string>
-    <string name="go_to_about">Go to About</string>
-    <string name="go_to_style_sheet">Go to Style Sheet</string>
-    <string name="style_sheet">Style Sheet</string>
+
+    <!-- Home Fragment -->
+    <string name="home_fragment_title">Home</string>
+
+    <string name="go_to_style_sheet_activity_button_text">Go to Style Sheet Activity</string>
+    <string name="go_to_list_activity_button_text">Go to List Activity</string>
+
+    <!-- Style Sheet Fragment -->
+    <string name="style_sheet_fragment_title">Style Sheet</string>
+
+    <!-- List Fragment -->
+    <string name="list_fragment_title">List</string>
+
 </resources>
